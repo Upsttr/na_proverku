@@ -4,12 +4,12 @@ public class Task7 {
     public static void main(String[] args) {
 
         Car car = new Car("Subaru");
-        int speed = car.getCurrentSpeed();
-        System.out.println(speed);
+        int speed = car.getCurrentSpeed();   // в задании тут почему-то String
+        System.out.println(speed);  // тут 0
 
         car.speedUp(25);
         speed = car.getCurrentSpeed();
-        System.out.println(speed);
+        System.out.println(speed);  // тут 25
 
         car.brake();
         speed = car.getCurrentSpeed();
