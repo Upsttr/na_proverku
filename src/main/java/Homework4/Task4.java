@@ -5,7 +5,7 @@ public class Task4 {
 
         // Задание 4
 
-        String password = "GJVmnFZ5^^";
+        String password = "GTVzzMZ5^^";
 
         boolean symbolCount = password.length() >= 8;
         boolean hasDigits = password.matches(".*\\d.*");
