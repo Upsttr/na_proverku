@@ -5,10 +5,11 @@ import java.time.LocalDateTime;
 
 public class HRTS implements HumanReadableTimestamp {
 
+    @Override
     public String getTimestamp(LocalDateTime eventTimestamp) {
-
         LocalDateTime now = LocalDateTime.now();
         Duration duration = Duration.between(eventTimestamp, now);
+
         long minutes = duration.toMinutes();
         long hours = duration.toHours();
         long days = duration.toDays();
@@ -18,7 +19,7 @@ public class HRTS implements HumanReadableTimestamp {
         } else if (hours < 24) {
             return formatHours(hours);
         } else if (days == 1) {
-            return "Опубликовано вчера";
+            return "опубликовано вчера";
         } else {
             return formatDays(days);
         }
@@ -36,24 +37,22 @@ public class HRTS implements HumanReadableTimestamp {
 
     private String formatHours(long hours) {
         if (hours == 1 || hours == 21) {
-            return "Опубликовано " + hours + " час назад";
+            return "опубликовано " + hours + " час назад";
         } else if (hours % 10 >= 2 && hours % 10 <= 4 && (hours < 10 || hours > 20)) {
-            return "Опубликовано " + hours + " часа назад";
+            return "опубликовано " + hours + " часа назад";
         } else {
-            return "Опубликовано " + hours + " часов назад";
+            return "опубликовано " + hours + " часов назад";
         }
-
     }
 
     private String formatDays(long days) {
         if (days == 1 || days == 21 || days == 31 || days == 101) {
-            return "Опубликовано " + days + " день назад";
+            return "опубликовано " + days + " день назад";
         } else if (days % 10 >= 2 && days % 10 <= 4 && (days < 10 || days > 20)) {
-            return "Опубликовано " + days + " дня назад";
+            return "опубликовано " + days + " дня назад";
         } else {
-            return "Опубликовано " + days + " дней назад";
+            return "опубликовано " + days + " дней назад";
         }
     }
-
 }
 
